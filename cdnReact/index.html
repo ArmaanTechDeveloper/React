@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Simple React app</title>
+    <style>
+        .banner{
+            font-size: 60px;
+        }
+        .title{
+            font-size: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="banner">
+
+    </div>
+    <script type="text/babel">
+        const Banner = ()=>{
+            const title = 'Welcome to my website';
+            const adress = 'https://codewithharry.com';
+            const handleClick = (e)=>{
+                alert('click registered')
+                console.log(e.target)
+            }
+            return(
+                // This is a comment in JSX
+                <>
+                <div className="banner">
+                    <p> Banner </p>
+                    <p>Todays date is : {new Date().toDateString()}</p>
+                    <a href={adress}>Visit the code with harry site</a>
+                    <button onClick={handleClick}> Click me</button>
+                </div>
+                <h1 className="title">{title}</h1>
+                </>
+            )
+        }
+
+        // using the react dom now 
+        ReactDOM.render(<Banner/>,document.getElementById('banner'))
+    </script>
+</body>
+</html>
